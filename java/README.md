@@ -1,13 +1,13 @@
-# Applicationの起動
+# Main メソッドの実行
 ```
-./gradlew bootRun
+./gradlew run
 ```
 
-# Springboot Test
+# すべての Unit Test の実行
 ```
 ./gradlew test
 ```
 
-# テスト結果の確認
+# code-server 上でテスト結果を確認する方法
 Live Serverを起動してから下記URLにアクセスする  
 http://localhost:8446/proxy/5500/build/reports/tests/test/

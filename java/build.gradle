@@ -25,3 +25,8 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+task run(type: JavaExec) {
+    main = 'com.example.demo.Calculator'
+    classpath = sourceSets.main.runtimeClasspath
+}
