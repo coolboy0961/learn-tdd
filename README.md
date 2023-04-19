@@ -1,0 +1,4 @@
+# Test
+```
+./gradlew test
+```

@@ -6,8 +6,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class CalculatorTest {
   @Test
   void testAdd() {
+    // Arrange
+    int expected = 5;
+
+    // Act
     Calculator calculator = new Calculator();
-    int result = calculator.add(2, 3);
-    assertEquals(5, result);
+    int actual = calculator.add(2, 3);
+
+    // Assert
+    assertEquals(expected, actual);
   }
 }
