@@ -15,13 +15,13 @@ public class StringCalculator {
     }
 
     String delimiter = this.extractCustomDelimiter(input);
-    String numberString = this.extractNumbers(input);
-    String[] numberStrings = numberString.split("[" + delimiter + "]");
-    if (numberStrings.length == 1) {
-      return Integer.valueOf(numberString);
+    String numbersString = this.extractNumbers(input);
+    String[] numberStringArray = numbersString.split("[" + delimiter + "]");
+    if (numberStringArray.length == 1) {
+      return Integer.valueOf(numbersString);
     }
 
-    for (String numbeString : numberStrings) {
+    for (String numbeString : numberStringArray) {
       int number = Integer.parseInt(numbeString);
       if (number > 1000) {
         number = 0;
@@ -51,7 +51,7 @@ public class StringCalculator {
   }
 
   private String extractCustomDelimiter(String input) {
-    String baseDelimiter = ",\n";
+    String baseDelimiter = ",|\n";
     if (input.startsWith("//")) {
       Matcher m = Pattern.compile("//(.*)\n(.*)").matcher(input);
       if (m.matches()) {
