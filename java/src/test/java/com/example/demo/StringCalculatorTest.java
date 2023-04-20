@@ -139,8 +139,10 @@ class StringCalculatorTest {
 
   @ParameterizedTest
   @CsvSource({
-      "'//[*][%]\\n1*2%3', 6",
-      "'//[@][#][!]\\n1@2#3!4', 10" })
+      "'//[*][%]\n1*2%3', 6",
+      "'//[@][#][!]\n1@2#3!4', 10",
+      "'//[@][#][!][$]\n1@2#3!4$5', 15"
+    })
   void 複数のカスタム区切り文字が指定された場合_合計が返される(String input, int expected) {
     // Arrange
     // No setup needed

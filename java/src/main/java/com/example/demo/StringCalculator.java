@@ -14,8 +14,6 @@ public class StringCalculator {
       return 0;
     }
 
-
-
     String delimiter = this.extractCustomDelimiter(input);
     String numberString = this.extractNumbers(input);
     String[] numberStrings = numberString.split("[" + delimiter + "]");
@@ -57,7 +55,10 @@ public class StringCalculator {
     if (input.startsWith("//")) {
       Matcher m = Pattern.compile("//(.*)\n(.*)").matcher(input);
       if (m.matches()) {
-        return baseDelimiter + m.group(1);
+        String customDelimiters = m.group(1)
+            .replaceAll("\\[", "")
+            .replaceAll("]", "|");
+        return baseDelimiter + customDelimiters;
       }
     }
 
